@@ -30,6 +30,19 @@ This is a **demonstration build** -- not production software. It was built to pr
 
 ---
 
+## The Identity Lab Series
+
+This project is documented in a three-part LinkedIn series and a detailed technical PDF. If you want the narrative of what was built and why, start with the posts. If you want the full technical evidence, read the PDF.
+
+| | Title | What it covers |
+|---|---|---|
+| **Part 1** | [The Build](https://www.linkedin.com/posts/jamie-ruth_enterpriseai-identitymanagement-okta-share-7481115038200823808-_Tpd) | Setting up the SCIM server, connecting Okta, proving provision and deprovision. The failure that taught the most. ([Full text](docs/linkedin-part1.md)) |
+| **Part 2** | [The Full Lifecycle](docs/linkedin-part2.md) | Adding the update operation, discovering Okta's read-modify-write pattern, completing the joiner-mover-leaver cycle. ([Full text](docs/linkedin-part2.md)) |
+| **Part 3** | [The Full Picture](docs/linkedin-part3.md) | Executive overview of everything -- the problem, the build, the proof, and what comes next. ([Full text](docs/linkedin-part3.md)) |
+| **PDF** | [The Full SCIM Lifecycle](docs/Identity-Lab-02-Full-SCIM-Lifecycle.pdf) | Complete technical writeup with architecture diagrams, audit evidence, timeline, authentication gate details, and key findings. |
+
+---
+
 ## Why This Matters
 
 Every organization that rolls out a new tool faces the same problem: **who gets access, how fast, and how do you prove it?**
@@ -136,8 +149,14 @@ lab-okta-scim-server/
   tests/
     scim.test.ts      # Integration tests (provision, filter, deactivate, group ops)
   docs/
-    Identity-Lab-02-Full-SCIM-Lifecycle.pdf   # Full technical writeup
-    images/                                    # Visualizations and infographic
+    Identity-Lab-02-Full-SCIM-Lifecycle.pdf   # Full technical writeup with diagrams
+    linkedin-part1.md                          # LinkedIn Part 1: The Build
+    linkedin-part2.md                          # LinkedIn Part 2: The Full Lifecycle
+    linkedin-part3.md                          # LinkedIn Part 3: The Full Picture
+    images/
+      infographic3-executive.png               # Executive summary infographic
+      viz-architecture.png                     # Environment architecture diagram
+      viz-timeline.png                         # Build timeline visualization
   .env.example        # Sample environment variables (safe to share)
   package.json        # Dependencies: express, dotenv, uuid
   tsconfig.json       # TypeScript strict mode, ES2022 target
@@ -221,16 +240,6 @@ Use the generated URL as the SCIM Base URL in your Okta SCIM integration setting
   "status": 201
 }
 ```
-
----
-
-## Documentation
-
-The full technical writeup is available as a PDF in the `docs/` directory:
-
-**[Identity Lab Part 2: The Full SCIM Lifecycle (PDF)](docs/Identity-Lab-02-Full-SCIM-Lifecycle.pdf)**
-
-It covers everything in this README in more depth, including: the executive summary, all three lifecycle operations with audit evidence, the actor fingerprint system, the authentication gate, architecture overview, key findings, and what comes next.
 
 ---
 

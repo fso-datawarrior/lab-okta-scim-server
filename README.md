@@ -32,7 +32,7 @@ This is a **demonstration build** -- not production software. It was built to pr
 
 ## The Identity Lab Series
 
-This project is documented in a three-part LinkedIn series and a detailed technical PDF. If you want the narrative of what was built and why, start with the posts. If you want the full technical evidence, read the PDF.
+This project is documented in a three-part LinkedIn series, a detailed technical PDF, a presentation deck, and an audio overview. Start with the posts for the narrative, the PDF for the technical evidence, or the audio if you prefer to listen.
 
 | | Title | What it covers |
 |---|---|---|
@@ -40,6 +40,8 @@ This project is documented in a three-part LinkedIn series and a detailed techni
 | **Part 2** | [The Full Lifecycle](docs/linkedin-part2.md) | Adding the update operation, discovering Okta's read-modify-write pattern, completing the joiner-mover-leaver cycle. ([Full text](docs/linkedin-part2.md)) |
 | **Part 3** | [The Full Picture](docs/linkedin-part3.md) | Executive overview of everything -- the problem, the build, the proof, and what comes next. ([Full text](docs/linkedin-part3.md)) |
 | **PDF** | [The Full SCIM Lifecycle](docs/Identity-Lab-02-Full-SCIM-Lifecycle.pdf) | Complete technical writeup with architecture diagrams, audit evidence, timeline, authentication gate details, and key findings. |
+| **Slides** | [SCIM Lifecycle Engineering](docs/SCIM_Lifecycle_Engineering.pptx) | Presentation deck covering the architecture, all three operations, audit trail, and theory vs. reality findings. Ready to present. |
+| **Audio** | [Audio Overview](docs/audio/SCIM_2.m4a) | A conversational walkthrough of the project, generated from the technical documentation. |
 
 ---
 
@@ -92,6 +94,12 @@ The system has five layers, each doing one job:
 ---
 
 ## What Was Proven
+
+<div align="center">
+<img src="docs/images/The_Full_SCIM_Lifecycle.png" alt="The Full SCIM Lifecycle -- Joiner, Mover, Leaver" width="720">
+</div>
+
+<br>
 
 <div align="center">
 <img src="docs/images/viz-timeline.png" alt="Build Timeline" width="720">
@@ -150,11 +158,15 @@ lab-okta-scim-server/
     scim.test.ts      # Integration tests (provision, filter, deactivate, group ops)
   docs/
     Identity-Lab-02-Full-SCIM-Lifecycle.pdf   # Full technical writeup with diagrams
+    SCIM_Lifecycle_Engineering.pptx           # Presentation deck (ready to present)
     linkedin-part1.md                          # LinkedIn Part 1: The Build
     linkedin-part2.md                          # LinkedIn Part 2: The Full Lifecycle
     linkedin-part3.md                          # LinkedIn Part 3: The Full Picture
+    audio/
+      SCIM_2.m4a                               # Audio overview of the project
     images/
       infographic3-executive.png               # Executive summary infographic
+      The_Full_SCIM_Lifecycle.png              # SCIM lifecycle technical infographic
       viz-architecture.png                     # Environment architecture diagram
       viz-timeline.png                         # Build timeline visualization
   .env.example        # Sample environment variables (safe to share)

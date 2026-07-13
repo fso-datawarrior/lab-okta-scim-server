@@ -50,12 +50,13 @@ export function summarizeRequest(
       }
     }
     if (method === "PATCH" && Array.isArray(b.Operations)) {
-      summary.operations = (b.Operations as Array<{ op?: string; path?: string }>).map(
-        (op) => ({
-          op: op.op,
-          path: op.path,
-        }),
-      );
+      summary.operations = (
+        b.Operations as Array<{ op?: string; path?: string; value?: unknown }>
+      ).map((op) => ({
+        op: op.op,
+        path: op.path,
+        value: op.value,
+      }));
     }
   }
   summary.path = path;
